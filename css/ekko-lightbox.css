@@ -5,11 +5,6 @@
  * License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
  */
 
-a:hover, a:focus  {
-  text-decoration: none;
-  opacity: 1;
-}
-
 .ekko-lightbox-container {
   position: relative;
 }
@@ -53,7 +48,6 @@ a:hover, a:focus  {
   float: left;
   padding-left: 15px;
   text-align: left;
-  opacity: 0.3;
 }
 
 .ekko-lightbox .glyphicon-chevron-right {

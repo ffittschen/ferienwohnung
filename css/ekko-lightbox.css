@@ -61,6 +61,7 @@ a:hover, a:focus  {
   float: right;
   padding-right: 15px;
   text-align: right;
+  opacity: 0.3;
 }
 
 .ekko-lightbox .modal-footer {

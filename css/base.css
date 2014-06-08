@@ -161,3 +161,11 @@ body {
     margin-top: 120px;
   }
 }
+
+.table-info{
+  background-color: #e6e6ff;
+}
+
+.table-data{
+  background-color: #f1f1f3;
+}

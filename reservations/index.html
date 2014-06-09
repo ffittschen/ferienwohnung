@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head> 
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,8 +21,114 @@
     <link rel="stylesheet" type="text/css" media="all" href="../css/daterangepicker-bs3.css" />
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-    
+    <!-- AngularJS -->
+    <script src="http://code.angularjs.org/1.2.6/angular.js"></script>
+    <!--script type="text/javascript" src="../js/app.js"></script-->
 
+    <!-- PROCESS THE FORM WITH AJAX -->
+    <script>
+    // define angular module/app
+    var formApp = angular.module('formApp', ['daterangepicker']);
+
+    // create angular controller and pass in $scope and $http
+
+    function formController($scope, $http) {
+
+        // create a blank object to hold our form information
+        // $scope will allow this to pass between controller and view
+        $scope.userForm = {};
+
+        $scope.salutations = [
+          {code:'Herr', name:'Herr'},
+          {code:'Frau', name:'Frau'}
+        ];
+
+        $scope.adults = [
+          {code:'0', name:'0'},
+          {code:'1', name:'1'},
+          {code:'2', name:'2'},
+          {code:'3', name:'3'},
+          {code:'4', name:'4'}
+        ];
+
+        $scope.children = [
+          {code:'0', name:'0'},
+          {code:'1', name:'1'},
+          {code:'2', name:'2'}
+        ];
+
+        $scope.date = {startDate: moment().subtract("days", 1), endDate: moment()};
+        $scope.opts1 = {
+          startDate: moment().add('days', 2),
+          endDate: moment().add('days', 7),
+          minDate: moment().add('days', 2),
+          maxDate: moment().add('months', 24),
+          dateLimit: {
+              days: 30
+          },
+          showDropdowns: true,
+          showWeekNumbers: true,
+          timePicker: false,
+          timePickerIncrement: 1,
+          timePicker12Hour: true,
+          opens: 'right',
+          buttonClasses: ['btn btn-default'],
+          applyClass: 'btn-small btn-primary',
+          cancelClass: 'btn-small',
+          format: 'DD/MM/YYYY',
+          separator: ' bis ',
+          locale: {
+              applyLabel: 'Speichern',
+              cancelLabel: '<span class="glyphicon glyphicon-trash"></span>',
+              fromLabel: 'Von',
+              toLabel: 'Bis',
+              customRangeLabel: 'Benutzerdefiniert',
+              daysOfWeek: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'],
+              monthNames: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
+              firstDay: 1
+          }
+        };
+        $scope.opts2 = {
+          singleDatePicker: true,
+          startDate: moment().subtract('month', 240),
+          endDate: moment().subtract('month', 240),
+          format: 'DD/MM/YYYY',
+          locale: {
+              applyLabel: 'Speichern',
+              cancelLabel: '<span class="glyphicon glyphicon-trash"></span>',
+              daysOfWeek: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'],
+              monthNames: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
+              firstDay: 1
+          }
+        };
+
+        // process the form
+        $scope.processForm = function() {
+            $http({
+                method: 'POST',
+                url: 'contact.php',
+                data: $.param($scope.user), // pass in data as strings
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                } // set the headers so angular passing info as form data (not request payload)
+            })
+                .success(function(data) {
+                    console.log(data);
+
+                    if (!data.success) {
+                        // if not successful, bind errors to error variables
+                        $scope.errorName = data.errors.name;
+                        $scope.errorSuperhero = data.errors.superheroAlias;
+                    } else {
+                        // if successful, bind success message to message
+                        $scope.message = data.message;
+                    }
+                });
+
+        };
+
+    }
+    </script>
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -31,79 +138,215 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
+</head>
 
-  <body>
+<body ng-app="formApp" ng-controller="formController">
     <!-- Insert Navbar -->
 
 
     <div class="container marketing">
-    
-      <div class="row">
-        <div class="col-lg-12">
-          <h2 class="featurette-heading">Anfragen <span class="text-muted">und Reservierungen</span></h2>
-          <h4>Basic Date Range Picker</h4>
-            <div class="well">
 
-               <form class="form-horizontal">
-                 <fieldset>
-                  <div class="control-group">
-                    <div class="controls">
-                     <div class="input-prepend input-group">
-                       <span class="add-on input-group-addon"><i class="glyphicon glyphicon-calendar fa fa-calendar"></i></span><input type="text" style="width: 200px" name="reservation" id="reservation" class="form-control" value="choose a date" /> 
-                     </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="featurette-heading">Anfragen
+                    <span class="text-muted">und Reservierungen</span>
+                </h2>
+
+                <!-- SHOW ERROR/SUCCESS MESSAGES -->
+                <div id="messages" class="well" ng-show="message">{{ message }}</div>
+                <!-- =================================================================== -->
+                <!-- FORM ============================================================== -->
+                <!-- =================================================================== -->
+                <!-- Anrede (r) -->
+                <!-- Name (r) -->
+                <!-- Vorname (r) -->
+                <!-- Geburtsdatum (r) -->
+                <!-- Telefonnummer -->
+                <!-- Email (r) -->
+                <!-- Datum (r) -->
+                <!-- Erwachsene (r) -->
+                <!-- Kinder (r) -->
+                <!-- Textfeld -->
+
+
+                <!-- pass in the variable if our form is valid or invalid -->
+                <form name="userForm" ng-submit="processForm()" novalidate class="form-horizontal">
+
+                    <!-- ANREDE -->
+                    <div class="form-group" ng-class="{ 'has-error' : userForm.salutation.$invalid && !userForm.salutation.$pristine }">
+                        <label class="col-sm-3 control-label">Anrede</label>
+                        <div class="col-sm-7">
+                            <select name="salutation" class="form-control" ng-model="user.salutation" required>
+                                <option value="">Wählen Sie Ihre Anrede</option>
+                                <option ng-repeat="v in salutations" value="{{v.code}}">{{v.name}}</option>
+                            </select>
+                            <p ng-show="userForm.salutation.$invalid && !userForm.salutation.$pristine" class="help-block">Bitte wählen Sie Ihre Anrede aus.</p>
+                        </div>
+
                     </div>
-                  </div>
-                 </fieldset>
-               </form>
 
-               
+                    <!-- VORNAME -->
+                    <div class="form-group" ng-class="{ 'has-error' : userForm.firstname.$invalid && !userForm.firstname.$pristine }">
+                        <label class="col-sm-3 control-label">Vorname</label>
+                        <div class="col-sm-7">
+                            <input type="text" name="firstname" class="form-control" ng-model="user.firstname" required>
+                            <p ng-show="userForm.firstname.$invalid && !userForm.firstname.$pristine" class="help-block">Bitte geben Sie Ihren Vornamen ein.</p>
+                        </div>
 
+                    </div>
+
+                    <!-- NAME -->
+                    <div class="form-group" ng-class="{ 'has-error' : userForm.lastname.$invalid && !userForm.lastname.$pristine }">
+                        <label class="col-sm-3 control-label">Name</label>
+                        <div class="col-sm-7">
+                            <input type="text" name="lastname" class="form-control" ng-model="user.lastname" required>
+                            <p ng-show="userForm.lastname.$invalid && !userForm.lastname.$pristine" class="help-block">Bitte geben Sie Ihren Nachnamen ein.</p>
+                        </div>
+                    </div>
+
+                    <!-- GEBURTSDATUM -->
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Geburtstag</label>
+                            <div class="col-sm-7" ng-class="{ 'has-error' : userForm.birthday.$invalid && !userForm.birthday.$pristine }">
+                                <div class="input-prepend input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                                    </span>
+                                    <input date-range-picker type="text" name="birthday" id="birthday" class="form-control" value="Geburtstag auswählen" 
+                                           ng-model="user.birthday" placeholder="DD/MM/YYYY" options="opts2" required>
+                                </div>
+                                <p ng-show="userForm.birthday.$invalid && !userForm.birthday.$pristine" class="help-block">Bitte geben Sie Ihr Geburtsdatum ein.</p>
+                                <!-- TODO: Birthday validator, bug fixen: help-block vergrößert icon -->
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- TELEFONNUMMER -->
+                    <div class="form-group" ng-class="{ 'has-error' : userForm.phone.$invalid && !userForm.phone.$pristine }">
+                        <label class="col-sm-3 control-label">Telefonnummer</label>
+                        <div class="col-sm-7">
+                            <input type="text" name="phone" class="form-control" ng-model="user.phone">
+                        </div>
+                        <!-- TODO: Telefon validator -->
+                    </div>
+
+                    <!-- EMAIL -->
+                    <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+                        <label class="col-sm-3 control-label">Email</label>
+                        <div class="col-sm-7">
+                            <input type="email" name="email" class="form-control" ng-model="user.email">
+                            <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Bitte geben Sie Ihre Email Adresse ein.</p>
+                        </div>
+                    </div>
+
+                    <!-- DATUM -->
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Gewünschtes Datum</label>
+                            <div class="col-sm-7"  ng-class="{ 'has-error' : userForm.date.$invalid && !userForm.date.$pristine }">
+                                <div class="controls">
+                                    <div class="input-prepend input-group">
+                                        <span class="add-on input-group-addon"><i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                                        </span>
+                                        <input date-range-picker type="text" name="reservation" id="reservation" class="form-control" placeholder="Datum auswählen" 
+                                               ng-model="user.date" options="opts1" required>
+                                        
+                                        <!-- TODO: Date validator ? -->
+                                    </div>
+                                </div>
+                                <p ng-show="userForm.date.$invalid && !userForm.date.$pristine" class="help-block">Bitte geben Sie ein Datum ein.</p>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- ERWACHSENE -->
+                    <div class="form-group" ng-class="{ 'has-error' : userForm.adults.$invalid && !userForm.adults.$pristine }">
+                        <label class="col-sm-3 control-label">Anzahl Erwachsene</label>
+                        <div class="col-sm-7">
+                            <select name="adults" class="form-control" ng-model="user.adults" required>
+                                <option value="">Wählen Sie die Anzahl an Erwachsenen aus</option>
+                                <option ng-repeat="v in adults" value="{{v.code}}">{{v.name}}</option>
+                            </select>
+                            <p ng-show="userForm.adults.$invalid && !userForm.adults.$pristine" class="help-block">Bitte wählen Sie aus, wie viele Erwachsene Sie sind.</p>
+                        </div>
+                    </div>
+
+                    <!-- KINDER -->
+                    <div class="form-group" ng-class="{ 'has-error' : userForm.children.$invalid && !userForm.children.$pristine }">
+                        <label class="col-sm-3 control-label">Anzahl Kinder</label>
+                        <div class="col-sm-7">
+                            <select name="children" class="form-control" ng-model="user.children" required>
+                                <option value="">Wählen Sie die Anzahl an Kindern aus</option>
+                                <option ng-repeat="v in children" value="{{v.code}}">{{v.name}}</option>
+                                <!-- TODO: validator "if adults=xy then" -->
+                            </select>
+                            <p ng-show="userForm.children.$invalid && !userForm.children.$pristine" class="help-block">Bitte wählen Sie aus, wie viele Kinder mitkommen.</p>
+                        </div>
+                    </div>
+
+                    <!-- TEXTFELD -->
+                    <div class="form-group" ng-class="{ 'has-error' : userForm.notes.$invalid && !userForm.notes.$pristine }">
+                        <label class="col-sm-3 control-label">Sonstiges / Bemerkungen</label>
+                        <div class="col-sm-7">
+                            <textarea type="text" name="notes" class="form-control" ng-model="user.notes" rows="5" placeholder="Hier ist Platz für weitere Bemerkungen oder Fragen Ihrerseits." maxlength="1000"></textarea>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-3 col-sm-7">
+                            <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Abschicken</button>
+                        </div>
+
+
+                    </div>
+                </form>
+                <!-- SHOW DATA FROM INPUTS AS THEY ARE BEING TYPED -->
+                <h2>Debug info:</h2>
+                <input date-range-picker id="daterange1" class="form-control date-picker" type="text"
+                           name="date" ng-model="user.date" required/>
+                <pre>
+                  {{ user }}
+                </pre>
             </div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div><!-- /.col-lg-12 -->
-      </div><!-- /.row -->
 
-      <!-- FOOTER -->
-      <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-      </footer>
+            <!-- FOOTER -->
+            <footer>
+                <p class="pull-right"><a href="#">Back to top</a>
+                </p>
+                <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a>
+                </p>
+            </footer>
 
-    </div><!-- /.container -->
+        </div>
+        <!-- /.container -->
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <!-- JS for daterange picker -->
+        <script type="text/javascript" src="../js/moment.min.js"></script>
+        <script type="text/javascript" src="../js/daterangepicker.js"></script>
+        <script type="text/javascript" src="../js/angular-daterangepicker.min.js"></script>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <!-- JS for daterange picker -->
-    <script type="text/javascript" src="../js/moment.min.js"></script>
-    <script type="text/javascript" src="../js/daterangepicker.js"></script>
-    <script type="text/javascript">
-     $(document).ready(function() {
-        $('#reservation').daterangepicker(null, function(start, end, label) {
-          console.log(start.toISOString(), end.toISOString(), label);
-        });
-     });
-     </script>
+        <!-- Google Analytics -->
+        <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-    <!-- Google Analytics -->
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-51392166-1', 'ferienwohnung-wimberger.de');
+        ga('send', 'pageview');
+        </script>
 
-      ga('create', 'UA-51392166-1', 'ferienwohnung-wimberger.de');
-      ga('send', 'pageview');
+</body>
 
-    </script>
-
-  </body>
 </html>

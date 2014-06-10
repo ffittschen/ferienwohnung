@@ -49,7 +49,7 @@ body {
 
 /* Carousel base class */
 .carousel {
-  min-height: 600px;
+  height: 500px;
   margin-bottom: 60px;
   margin-top: 51px;
   max-width: 1100px;
@@ -63,7 +63,7 @@ body {
 
 /* Declare heights because of positioning of img element */
 .carousel .item {
-  height: 600px;
+  height: 500px;
   background-color: #777;
 }
 .carousel-inner > .item > img {
@@ -108,7 +108,7 @@ body {
 ------------------------- */
 
 .featurette-divider {
-  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+  margin: 40px 0; /* Space out the Bootstrap <hr> more */
 }
 
 /* Thin out the marketing headings */
@@ -167,22 +167,6 @@ body {
   }
 }
 
-.table-info{
-  background-color: #e6e6ff;
+.bottom-space{
+  margin-bottom: 40px;
 }
-
-.table-data{
-  background-color: #f1f1f3;
-}
-
-.font-big{
-  font-size: 20px;
-}
-
-.font-links{
-  text-decoration: none;
-  color: #9A9A9A;
-  font-size: 20px;
-  letter-spacing: -1px;
-}
-

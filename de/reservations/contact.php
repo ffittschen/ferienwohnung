@@ -18,10 +18,20 @@
     $data['success'] = true;
     $data['message'] = 'Success!';
 
-    $to = "ffittschen@gmail.com";
-    $subject = "Neue Anfrage von $firstname $lastname";
+    /* Empfänger */
+    $empfaenger = 'ffittschen@gmail.com';
 
-    mail($to, $subject, $data, "From: anfragen@ferienwohnung-wimberger.de\r\n");
+    /* Absender */
+    $absender = 'info@ferienwohnung-wimberger.de';
+
+    /* Betreff */
+    $subject = 'Neue Anfrage von' + $data['firstname'] + ' ' + $data['lastname'] + '';
+
+    /* Nachricht */
+    $message = $data;
+
+    /* Verschicken der Mail */
+    mail($empfaenger, $subject, $message, "From: anfragen@ferienwohnung-wimberger.de", '-f info@ferienwohnung-wimberger.de');
 
     // return all our data to an AJAX call
     echo json_encode($data);

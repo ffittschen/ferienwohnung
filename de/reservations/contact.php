@@ -51,7 +51,7 @@ $data           = array();      // array to pass back data
         $data['notes'] = $_POST['notes'];
 
 // return a response ===========================================================
-    
+
     // response if there are errors
         if ( ! empty($errors)) {
 
@@ -71,10 +71,10 @@ $data           = array();      // array to pass back data
             $absender = 'info@ferienwohnung-wimberger.de';
 
             /* Betreff */
-            $subject = 'Neue Anfrage von' + $data['firstname'] + ' ' + $data['lastname'] + '';
+            $subject = 'Neue Anfrage von'.$data['firstname'].' '.$data['lastname'] + '';
 
             /* Nachricht */
-            $message = $data;
+            $message = "form data is: ".implode(',',$data)."<br>";
 
             /* Verschicken der Mail */
             mail($empfaenger, $subject, $message, 'From: anfragen@ferienwohnung-wimberger.de', '-f info@ferienwohnung-wimberger.de');

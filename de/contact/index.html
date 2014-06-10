@@ -8,7 +8,7 @@
     <meta name="author" content="Christoph Wimberger">
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
 
-    <title>Über Uns - Ferienwohnung Wimberger - Farchant</title>
+    <title>Kontakt - Ferienwohnung Wimberger - Farchant</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
@@ -68,24 +68,22 @@
     </div>
 
     <!-- Content -->
-    <div class="container marketing carousel">
+    <div class="container marketing ts-container">
       <div class="row featuerette">
         <div class="col-md-offset-2 col-md-5">
           <h1 class="bottom-space">Adresse</h1>
-          <address>
-            <strong>Ferienwohnung Wimberger</strong><br>
+          <address itemscope itemtype="http://schema.org/Organization">
+            <strong><span itemprop="legalName">Ferienwohnung Wimberger</span></strong><br>
             Roswitha und Richard Wimberger<br>
-            Wankstraße 24<br>
-            82490 Farchant<br><br>
+            <span itemprop="streetAddress">Wankstraße 24</span><br>
+            <span itemprop="postalCode">82490</span> <span itemprop="addressLocality">Farchant</span><br><br>
 
-            <address>
               <strong>E-Mail:</strong>
-                <a href="mailto:info@ferienwohnung-wimberger.de">info@ferienwohnung-wimberger.de</a>
-            </address>
+                <a href="mailto:info@ferienwohnung-wimberger.de" itemprop="email">info@ferienwohnung-wimberger.de</a>
 
             <strong>Telefon:</strong><span itemprop="telephone"><a href="+498821642"> +49 (0) 8821 6425 </a></span><br>
-            <strong>Mobil:</strong><span itemprop="mobile"><a href="+491708226309"> +49 (0) 170 82 26 309</a></span><br>
-            <strong>Fax:</strong> <span itemprop="fax">+49 (0) 70 84 247 </span>   
+            <strong>Mobil:</strong><span itemprop="telephone"><a href="+491708226309"> +49 (0) 170 82 26 309</a></span><br>
+            <strong>Fax:</strong> <span itemprop="faxNumber">+49 (0) 70 84 247 </span>   
             </address>
 
         </div>
@@ -111,13 +109,15 @@
       </div>
       <!-- FOOTER -->
 
-      <hr class="feauterette-divider">
-      <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-      </footer>
+              </div><!-- /.container -->  
 
-    </div><!-- /.container -->
+        <footer>
+            <p class="pull-right"><a href="#">Zum Seitenanfang</a>
+            </p>
+            <p>&copy; 2014 Ferienwohnung Wimberger &middot; <a href="../impressum/">impressum</a>
+            </p>
+        </footer>
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

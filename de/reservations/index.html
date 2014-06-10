@@ -106,8 +106,7 @@
 
                     if (!data.success) {
                         // if not successful, bind errors to error variables
-                        $scope.errorName = data.errors.name;
-                        $scope.errorSuperhero = data.errors.superheroAlias;
+                        $scope.phpErrors = data.errors;
                     } else {
                         // if successful, bind success message to message
                         $scope.message = data.message;
@@ -328,13 +327,14 @@
 
                     </div>
                 </form>
-                <!-- <h2>Debug info:</h2>
+                <h2>Debug info:</h2>
                 <pre>
-                  {{ user }}
+                  {{ phpErrors }}
+                  <!-- {{ user }}
                   selectedAdults: {{ selectedAdults }}
                   selectedChildren: {{ selectedChildren }}
-                  {{ userForm }}
-                </pre> -->
+                  {{ userForm }} -->
+                </pre>
             </div>
         </div>
         <!-- FOOTER -->

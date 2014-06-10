@@ -5,53 +5,53 @@ $data           = array();      // array to pass back data
 
 // validate the variables ======================================================
     if (empty($_POST['salutation']))
-        $errors['salutation'] = 'Salutation is required.';
+        $errors['salutation'] = 'salutation is required.';
     else
         $data['salutation'] = $_POST['salutation']; // (r)
 
-    if (empty($_POST['lastname']))
-        $errors['lastname'] = 'Lastname is required.';
-    else
-        $data['lastname'] = $_POST['lastname']; // (r)
-
     if (empty($_POST['firstname']))
-        $errors['firstname'] = 'Firstname is required.';
+        $errors['firstname'] = 'firstname is required.';
     else
         $data['firstname'] = $_POST['firstname']; // (r)
 
+    if (empty($_POST['lastname']))
+        $errors['lastname'] = 'lastname is required.';
+    else
+        $data['lastname'] = $_POST['lastname']; // (r)
+
     if (empty($_POST['birthday']))
-        $errors['birthday'] = 'Birthday is required.';
+        $errors['birthday'] = 'birthday is required.';
     else
         $data['birthday'] = $_POST['birthday']; // (r)
 
-    if (!empty($_POST['lastname']))
+    if (!empty($_POST['phone']))
         $data['phone'] = $_POST['phone'];        
 
     if (empty($_POST['email']))
-        $errors['email'] = 'Email is required.';
+        $errors['email'] = 'email is required.';
     else
         $data['email'] = $_POST['email']; // (r)
 
     if (empty($_POST['date']))
-        $errors['date'] = 'Date is required.';
+        $errors['date'] = 'date is required.';
     else
         $data['date'] = $_POST['date']; // (r)
 
     if (empty($_POST['adults']))
-        $errors['adults'] = 'Adults is required.';
+        $errors['adults'] = 'adults is required.';
     else
         $data['adults'] = $_POST['adults']; // (r)
 
     if (empty($_POST['children']))
-        $errors['children'] = 'Children is required.';
+        $errors['children'] = 'children is required.';
     else
         $data['children'] = $_POST['children']; // (r)
 
-    if (!empty($_POST['lastname']))
-        $data['message'] = $_POST['message'];
+    if (!empty($_POST['notes']))
+        $data['notes'] = $_POST['notes'];
 
 // return a response ===========================================================
-
+    
     // response if there are errors
         if ( ! empty($errors)) {
 

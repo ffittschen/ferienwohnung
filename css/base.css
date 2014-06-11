@@ -277,3 +277,13 @@ h2#links {
 .top-space{ /* für links bei impressum */
   padding-top: 10px;
 }
+
+
+a{
+  color: #CD9648;
+}
+
+
+a:hover{
+  color: #815820;
+  }

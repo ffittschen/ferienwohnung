@@ -1,11 +1,9 @@
 Pre-Launch TODO:
 - General
     - Sitemap erstellen (Hoffe past so)
-    - navi/link Farben einheitlich gestalten (muss in den less dateien gemacht werden! siehe colorcodes in base.css)
-        navbar active: #5A5A5A (same color as body text)
-    - a:hover transition
+    - navbar active: #5A5A5A (same color as body text)
 - Mobile
-    - datepicker css: kalender auf mobile falschrum (mögliche Lösung auf github, funktioniert aber nicht richtig, warte im Moment auf eine antwort)
+    - datepicker css kalender auf mobile falschrum (mögliche Lösung auf github, funktioniert aber nicht richtig, warte im Moment auf eine antwort)
     - bei Impressionen geht navi gar nicht
     - preis tabelle mobile responsive machen
     - navi: navbar-brand richtig stylen

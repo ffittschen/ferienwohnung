@@ -110,6 +110,10 @@
                     } else {
                         // if successful, bind success message to message
                         $scope.message = data.message;
+                        // Hide the status message which was set above after 3 seconds.
+                        $timeout(function() {
+                          $scope.message = null;
+                        }, 3000);
                     }
                 });
 
@@ -187,7 +191,7 @@
                 </h2>
 
                 <!-- SHOW ERROR/SUCCESS MESSAGES -->
-                <div id="messages" class="well" ng-show="message">{{ message }}</div>
+                <div id="messages" class="alert alert-success" ng-show="message">{{ message }}</div>
                 <!-- =================================================================== -->
                 <!-- FORM ============================================================== -->
                 <!-- =================================================================== -->
@@ -204,7 +208,7 @@
 
 
                 <!-- pass in the variable if our form is valid or invalid -->
-                <form name="userForm" ng-submit="processForm()" novalidate class="form-horizontal">
+                <form name="userForm" ng-submit="processForm()" novalidate class="form-horizontal" ng-show="!message">
 
                     <!-- ANREDE -->
                     <div class="form-group" ng-class="{ 'has-error' : userForm.salutation.$invalid && !userForm.salutation.$pristine }">
@@ -327,14 +331,14 @@
 
                     </div>
                 </form>
-                <h2>Debug info:</h2>
+                <!-- <h2>Debug info:</h2>
                 <pre>
                   {{ phpErrors }}
-                  <!-- {{ user }}
+                  {{ user }}
                   selectedAdults: {{ selectedAdults }}
                   selectedChildren: {{ selectedChildren }}
-                  {{ userForm }} -->
-                </pre>
+                  {{ userForm }} 
+                </pre>-->
             </div>
         </div>
         <!-- FOOTER -->

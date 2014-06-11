@@ -1,0 +1,23 @@
+Pre-Launch TODO:
+- contact Form feinschliff ?
+- Footer links
+- datepicker css: kalender auf mobile falschrum (mögliche Lösung auf github, funktioniert aber nicht richtig, warte im Moment auf eine antwort)
+- title-Attribut auf allen Seiten auf Aussagekräftigkeit prüfen. Immer: "Seitentitel - Beschreibung(optional) - Ferienwohnung Wimberger - Farchant"
+- navi/footer/link Farben einheitlich gestalten (siehe colorcodes in base.css)
+- navi in mobiler Ansicht auf nicht sticky umstellen
+    - bei Impressionen geht navi gar nicht
+    - navi sollte zusätzlich zu dem rechten Button auf der linken Seite "Ferienwohnung Wimberger" stehen haben
+- preis tabelle mobile responsive machen
+- alle Aufzählungen mit den Klassen wie bei preisen
+- Text Auto zeilenumbruch bei Impressionen
+- links stylen bei Impressionen (eventuell feste breite, damit geordnet untereinander)
+- bootstrap.css -> body: font-size 16px
+- kontakt -> link zu anfrage reinmachen
+
+Post-Launch TODO:
+- PHPMailer -> multi-part mail with html/plain
+- Favicon
+- formular nach absenden mit animation verstecken
+- angularjs not updating with browser auto completition
+- mobile Ansicht carousel: media queries höhe einstellen
+- navi in mobiler ansicht wie bei instagram app?

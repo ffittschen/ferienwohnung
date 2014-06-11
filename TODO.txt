@@ -1,6 +1,6 @@
 Pre-Launch TODO:
 - General
-    - Sitemap erstellen (Hoffe past so)
+    - Sitemap erstellen (Hoffe past so - Linkfarben bei Sitemap unpassend)
     - navbar active: #5A5A5A (same color as body text)
 - Mobile
     - datepicker css kalender auf mobile falschrum (mögliche Lösung auf github, funktioniert aber nicht richtig, warte im Moment auf eine antwort)

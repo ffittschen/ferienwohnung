@@ -273,3 +273,7 @@ h2#links {
 .ts-container{
   padding-top: 50px;
 }
+
+.top-space{ /* für links bei impressum */
+  padding-top: 10px;
+}

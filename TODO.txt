@@ -4,7 +4,6 @@ Pre-Launch TODO:
     - navi/link Farben einheitlich gestalten (muss in den less dateien gemacht werden! siehe colorcodes in base.css)
         navbar active: #5A5A5A (same color as body text)
     - alle Aufzählungen mit den Klassen wie bei preisen
-    - links stylen bei Impressionen (eventuell feste breite, damit geordnet untereinander)
     - kontakt -> link zu anfrage reinmachen
     - a:hover transition
 - Mobile

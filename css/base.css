@@ -60,12 +60,8 @@ footer {
 
 /* Carousel base class */
 .carousel {
-  height: 100%;
-  margin-bottom: 60px;
-  margin-top: 51px;
+  height: 500px;
   max-width: 1800px;
-  margin-right: auto;
-  margin-left: auto;
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
@@ -74,15 +70,35 @@ footer {
 
 /* Declare heights because of positioning of img element */
 .carousel .item {
-  background-color: #777;
+    background-color: #777777;
+    height: 500px;
+}
+.carousel .item img {
+    border: 0 none;
+    height: 350px;
+    left: -9999px;
+    margin: 0 auto;
+    max-width: none;
+    min-width: 100%;
+    position: absolute;
+    right: -9999px;
 }
 .carousel-inner > .item > img {
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  
+  display: block;
+  height: auto;
+  line-height: 1;  
+}
+.carousel-inner {
+  margin-top: 50px;
+}
+img {
+    vertical-align: middle;
 }
 
+#myCarousel.carousel, #myCarousel.carousel .item, #myCarousel.carousel .item img {
+    height: 500px;
+    margin: 0 auto;
+}
 
 
 /* MARKETING CONTENT

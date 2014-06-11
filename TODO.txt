@@ -1,16 +1,20 @@
 Pre-Launch TODO:
-- Sitemap erstellen
-- datepicker css: kalender auf mobile falschrum (mögliche Lösung auf github, funktioniert aber nicht richtig, warte im Moment auf eine antwort)
-- title-Attribut auf allen Seiten auf Aussagekräftigkeit prüfen. Immer: "Seitentitel - Beschreibung(optional) - Ferienwohnung Wimberger - Farchant"
-- navi/link Farben einheitlich gestalten (muss in den less dateien gemacht werden! siehe colorcodes in base.css)
-    navbar active: #5A5A5A (same color as body text)
-- bei Impressionen geht navi gar nicht
-- preis tabelle mobile responsive machen
-- alle Aufzählungen mit den Klassen wie bei preisen
-- links stylen bei Impressionen (eventuell feste breite, damit geordnet untereinander)
-- bootstrap.css -> body: font-size 16px
-- kontakt -> link zu anfrage reinmachen
-- a:hover transition
+- General
+    - Sitemap erstellen
+    - title-Attribut auf allen Seiten auf Aussagekräftigkeit prüfen. Immer: "Seitentitel - Beschreibung(optional) - Ferienwohnung Wimberger - Farchant"
+    - navi/link Farben einheitlich gestalten (muss in den less dateien gemacht werden! siehe colorcodes in base.css)
+        navbar active: #5A5A5A (same color as body text)
+    - alle Aufzählungen mit den Klassen wie bei preisen
+    - links stylen bei Impressionen (eventuell feste breite, damit geordnet untereinander)
+    - bootstrap.css -> body: font-size 16px
+    - kontakt -> link zu anfrage reinmachen
+    - a:hover transition
+- Mobile
+    - datepicker css: kalender auf mobile falschrum (mögliche Lösung auf github, funktioniert aber nicht richtig, warte im Moment auf eine antwort)
+    - bei Impressionen geht navi gar nicht
+    - preis tabelle mobile responsive machen
+    - navi: navbar-brand richtig stylen
+    - footer: elemente utnereinander (mediaqueries)
 
 Post-Launch TODO:
 - PHPMailer -> multi-part mail with html/plain

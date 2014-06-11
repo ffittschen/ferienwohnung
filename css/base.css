@@ -67,7 +67,7 @@ footer {
   background-color: #5A5A5A;
   color: #fff;
   padding: 15px;
-  height: 50px;
+  height: auto;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -257,6 +257,10 @@ h2#links {
 
   .featurette-heading {
     font-size: 50px;
+  }
+
+  .footer-wrapper{
+    margin: 0px;
   }
 }
 

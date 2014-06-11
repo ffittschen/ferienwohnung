@@ -6,7 +6,6 @@ Pre-Launch TODO:
     - bei Impressionen geht navi gar nicht
     - preis tabelle mobile responsive machen
     - navi: navbar-brand richtig stylen
-    - footer: elemente utnereinander (mediaqueries)
 
 Post-Launch TODO:  
 - PHPMailer -> multi-part mail with html/plain

@@ -166,6 +166,19 @@ img {
 /* RESPONSIVE CSS
 -------------------------------------------------- */
 
+@media (max-width: 767px) {
+    .navbar-fixed-top {
+        position: relative;
+        top: auto;
+    }
+    .navbar-collapse {
+        max-height: none;
+    }
+    body {
+        margin: 0;
+    }
+}
+
 @media (min-width: 768px) {
 
   /* Remove the edge padding needed for mobile */

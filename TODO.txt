@@ -1,14 +1,12 @@
 Pre-Launch TODO:
 - Sitemap erstellen
-- Footer links: Impressum - AGB - Sitemap
 - datepicker css: kalender auf mobile falschrum (mögliche Lösung auf github, funktioniert aber nicht richtig, warte im Moment auf eine antwort)
 - title-Attribut auf allen Seiten auf Aussagekräftigkeit prüfen. Immer: "Seitentitel - Beschreibung(optional) - Ferienwohnung Wimberger - Farchant"
-- navi/footer/link Farben einheitlich gestalten (muss in den less dateien gemacht werden! siehe colorcodes in base.css)
-    navbar active, footer background: #5A5A5A (same color as body text)
+- navi/link Farben einheitlich gestalten (muss in den less dateien gemacht werden! siehe colorcodes in base.css)
+    navbar active: #5A5A5A (same color as body text)
 - bei Impressionen geht navi gar nicht
 - preis tabelle mobile responsive machen
 - alle Aufzählungen mit den Klassen wie bei preisen
-- Text Auto zeilenumbruch bei Impressionen
 - links stylen bei Impressionen (eventuell feste breite, damit geordnet untereinander)
 - bootstrap.css -> body: font-size 16px
 - kontakt -> link zu anfrage reinmachen

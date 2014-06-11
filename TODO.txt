@@ -3,8 +3,6 @@ Pre-Launch TODO:
     - Sitemap erstellen (Hoffe past so - Linkfarben bei Sitemap unpassend)
 - Mobile
     - datepicker css kalender auf mobile falschrum (mögliche Lösung auf github, funktioniert aber nicht richtig, warte im Moment auf eine antwort)
-    - preis tabelle mobile responsive machen
-
 Post-Launch TODO:  
 - PHPMailer -> multi-part mail with html/plain
 - Favicon

@@ -25,7 +25,7 @@ $data           = array();      // array to pass back data
         $data['birthday'] = $_POST['birthday']; // (r)
 
     if (!empty($_POST['phone']))
-        $data['phone'] = $_POST['phone'];        
+        $data['phone'] = $_POST['phone'];
 
     if (empty($_POST['email']))
         $errors['email'] = 'email is required.';
@@ -67,11 +67,8 @@ $data           = array();      // array to pass back data
             /* Empfänger */
             $empfaenger = 'ffittschen@gmail.com';
 
-            /* Absender */
-            $absender = 'info@ferienwohnung-wimberger.de';
-
             /* Betreff */
-            $subject = 'Neue Anfrage von'.$data['firstname'].' '.$data['lastname'] + '';
+            $subject = 'Neue Anfrage von '.$data['firstname'].' '.$data['lastname'];
 
             /* Nachricht */
             $message = "form data is: ".implode(',',$data)."<br>";

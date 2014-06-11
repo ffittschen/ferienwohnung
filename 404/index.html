@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ferienwohnung Wimberger - Farchant">
+    <meta name="author" content="Christoph Wimberger">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+
+    <title>404 - Seite nicht gefunden - Ferienwohnung Wimberger - Farchant</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/base.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- Insert Navbar -->
+
+
+    <div class="container marketing">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="errorpage-heading text-center">404</h1>
+                <p class="errorpage-paragraph text-center"><strong>Die aufgerufene Seite wurde nicht gefunden.</strong></p>
+
+                <script type="text/javaScript">
+                <!--
+                 // let's see what they were searching for ...
+                var strReferrer = document.referrer.toLowerCase();
+                if (location.href.indexOf("noreferrer=true") >= 0) strReferrer = "";
+                if (strReferrer.length == 0) {
+                    //von keiner Seite weitergeleitet:
+                    var str = '';
+                    str += '<div class="container col-md-offset-2 col-md-8">';
+                    str += '<h3>Aus einem der folgenden Gründe können Sie diese Seite nicht erreichen:<\/h3>';
+                    str += '<ul>';
+                    str += '  <li>Ein <strong>Lesezeichen ist nicht mehr aktuell<\/strong>.<\/li>';
+                    str += '  <li>Eine Suchmaschine hat einen <strong>nicht mehr aktuellen Eintrag</strong>.<\/li>';
+                    str += '  <li>Eine <strong>nicht richtig geschriebene Adresse</strong>.<\/li>';
+                    str += '<\/ul>';
+                    str += '<\/div>';
+                    document.write(str);
+                }
+                var blnSearchReferral = false;
+                var blnInsiteReferral = false;
+                var strSite = "";
+                if (strReferrer.length != 0)
+                 //we have been referred to this page some another web page ...
+                 {
+                    if (
+                        (strReferrer.indexOf(".looksmart.co") > 0) ||
+                        (strReferrer.indexOf(".ifind.freeserve") > 0) ||
+                        (strReferrer.indexOf(".ask.co") > 0) ||
+                        (strReferrer.indexOf("google.co") > 0) ||
+                        (strReferrer.indexOf("google.de") > 0) ||
+                        (strReferrer.indexOf("altavista.co") > 0) ||
+                        (strReferrer.indexOf("msn.co") > 0) ||
+                        (strReferrer.indexOf("yahoo.co") > 0)
+                    ) {
+                        //we have been referred to from a known search engine
+                        blnSearchReferral = true;
+                        var arrSite = strReferrer.split("/");
+                        var arrParams = strReferrer.split("?");
+                        var strSearchTerms = arrParams[1];
+                        arrParams = strSearchTerms.split("&");
+                        strSite = arrSite[2];
+                        var sQryStr = "";
+                        //define what search terms are in use
+                        var arrQueryStrings = new Array();
+                        arrQueryStrings[0] = "q="; //google, altavista, msn
+                        arrQueryStrings[1] = "p="; //yahoo
+                        arrQueryStrings[2] = "ask="; //ask jeeves
+                        arrQueryStrings[3] = "key="; //looksmart
+                        for (i = 0; i < arrParams.length; i++)
+                        //loop through all the parameters in the referring page's URL
+                        {
+                            for (q = 0; q < arrQueryStrings.length; q++) {
+                                sQryStr = arrQueryStrings[q];
+                                if (arrParams[i].indexOf(sQryStr) == 0) { //we've found a search term!
+                                    strSearchTerms = arrParams[i];
+                                    strSearchTerms = strSearchTerms.split(sQryStr);
+                                    strSearchTerms = strSearchTerms[1];
+                                    strSearchTerms = strSearchTerms.replace("+", " ");
+                                }
+                            }
+                        }
+                        document.write("<div class='grey_bg border_bottom'><p>Sie haben auf <strong><a href='" + strReferrer + "' target='_blank'>" + strSite + "</a></strong> nach \"<strong>" + strSearchTerms + "</strong>\" gesucht. Es sieht aber so aus, als wenn deren Indizierung nicht mehr aktuell ist.</p>");
+                        //--------------------------------------------------------------
+                        // edit and repeat for all pages you want to match to the search phrases found
+                        if (
+                            (strSearchTerms.indexOf("ferienwohnung") >= 0) ||
+                            (strSearchTerms.indexOf("garmisch") >= 0) ||
+                            (strSearchTerms.indexOf("wimberger") >= 0)
+                        ) {
+                            document.write("<h3>Folgende Seiten von uns könnten Ihnen helfen:</h3>");
+                            document.write("<ul><li><a href='http://www.ferienwohnung-wimberger.de/de/appartment/'>Rundgang durch die Ferienwohnung</a></li>");
+                            document.write("<li><a href='http://www.ferienwohnung-wimberger.de/de/contact/'>Lage der Ferienwohnung</a></li>");
+                            document.write("<li><a href='http://www.ferienwohnung-wimberger.de/de/about/'>Über uns</a></li></ul></div>");
+                        } else if ((strSearchTerms.indexOf("preise") >= 0)) {
+                            document.write("<h3>Folgende Seite von uns könnte Ihnen helfen:</h3>");
+                            document.write("<ul><li><a href='http://www.ferienwohnung-wimberger.de/de/price/'>Preise</a></li></ul></div>");
+                        }
+                        //--------------------------------------------------------------
+                    } //end of section dealing with referral from known search engine
+                    if (!blnSearchReferral) {
+                        // for referrals from other sites with broken links
+                        // ------------------------------------------------
+                        strSite = strReferrer;
+                        strSite = strSite.split("/");
+                        strSite = strSite[2];
+                        document.write("<p>Sie wurden von: <strong><a href='" + strReferrer + "' target='_blank'>" + strSite + "</a></strong> fälschlicherweise hierher weitergeleitet.</p>");
+
+                        // for referrals from other sites with broken links
+                        // -----------------------------------------------
+                        blnInsiteReferral = ((strReferrer.indexOf("ferienwohnung-wimberger.de") >= 0) || (strReferrer.indexOf("ferienwohnung-farchant.com") >= 0))
+                        //got here
+
+
+                        /*str='<div class="form-group">';
+                str+='<h2>Helfen Sie uns, damit wir Ihnen helfen können!</h2>';
+                if (blnInsiteReferral)
+                  {str+='<p>Es scheint, als wenn einer von unseren Links nicht mehr aktuell ist - dies tut uns Leid und wir versichern Ihnen, dass diese Umstände an den Verantwortlichen weitergeleitet werden, damit der Link repariert wird. Alles, was Sie dazu beitragen müssen, ist den Knopf zu drücken!</p>';}
+                else
+                  {str+='<p>Um unsere Seite zu verbessern können Sie uns informieren, falls eine andere Seite über einen falschen Link verfügt. Wir werden dann unser bestes tun und den Verantwortlichen informieren, dass unsere Seite sich verändert hat und der Link bitte aktualisiert werden soll. <strong>Drücken Sie dazu einfach den Knopf!</strong></p>';}
+                str+='<form method="post" action="http:\/\/www.cutandpastescripts.com\/cgi-bin\/formprocessing\/forms.pl" onsubmit="alert(\'Vielen Dank für Ihre Hilfe!\');">';
+                str+='<input type="hidden" name="activenumber" value="" \/>';
+                str+='<input type="hidden" name="username" value="" \/>';
+                str+='<input type="hidden" name="Referring Site" value="' + strReferrer + '" \/>';
+                str+='<input type="hidden" name="Page Requested" value="' + location.href + '" \/>';
+                str+='<input type="submit" name="cmdSubmit" class="btn btn-primary" value="Link melden &gt;&gt;" \/>';
+                str+='<\/form>';
+                str+='<\/div>';
+                
+                document.write(str);*/
+                    }
+                }
+                </script>
+                <noscript>
+                    <h3>Dies könnte folgende Gründe haben:</h3>
+                    <ul>
+                        <li>Die eingegebene Adresse ist falsch.</li>
+                        <li>Ein Lesezeichen ist nicht mehr aktuell.</li>
+                        <li>Ein Suchmaschinen-Link ist nicht mehr aktuell.</li>
+                        <li>Ein interner Link ist falsch und der Webmaster hat dies nicht bemerkt.</li>
+                    </ul>
+                </noscript>
+
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+
+        <hr class="feauterette-divider">
+
+        <!-- FOOTER -->
+        <footer>
+            <p class="pull-right"><a href="#">Back to top</a>
+            </p>
+            <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a>
+            </p>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/docs.min.js"></script>
+
+    <!-- Google Analytics -->
+    <script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-51392166-1', 'ferienwohnung-wimberger.de');
+    ga('send', 'pageview','/404/?url=' + document.location.pathname + document.location.search + '&ref=' + document.referrer);
+    </script>
+
+</body>
+
+</html>

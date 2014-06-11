@@ -5,7 +5,6 @@ Pre-Launch TODO:
         navbar active: #5A5A5A (same color as body text)
     - alle Aufzählungen mit den Klassen wie bei preisen
     - links stylen bei Impressionen (eventuell feste breite, damit geordnet untereinander)
-    - bootstrap.css -> body: font-size 16px
     - kontakt -> link zu anfrage reinmachen
     - a:hover transition
 - Mobile

@@ -39,7 +39,12 @@ body {
 .navbar-wrapper .navbar {
   padding-right: 15px;
   padding-left: 15px;
-  background-color: #D8D8D8;
+  background-color: #cdcdcd;
+}
+
+.navbar-fixed-top, .navbar-fixed-bottom {
+    border-radius: 0 !important;
+    border-bottom: 0;
 }
 
 /* CUSTOMIZE THE Footer
@@ -48,11 +53,22 @@ body {
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
 footer {
   width: 100%;
-  background-color: #6E6E6E;
-  color: #FFC573;
+  background-color: #5A5A5A;
+  color: #fff;
   padding: 15px;
 }
-
+footer p {
+  margin:0;
+}
+footer a {
+  color: #CD9648;
+}
+footer a:hover, footer a:focus {
+  color: #489ACD;
+}
+.footer-container {
+  max-width: 1800px;
+}
 
 
 /* CUSTOMIZE THE CAROUSEL

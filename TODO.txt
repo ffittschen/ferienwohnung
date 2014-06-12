@@ -1,9 +1,16 @@
 Pre-Launch TODO:
 - General
-    - Sitemap erstellen (Hoffe past so - Linkfarben bei Sitemap unpassend)
+    - Sitemap Bild auf rechte Seite?
+    - SEO Sachen für Google
+        - meta tags in den <head>
+        - allen <a> tags einen title geben
+        - allen <img> tags einen title geben und alt prüfen
+        - nofollow bei links nach außen
+
 - Mobile
     - datepicker css kalender auf mobile falschrum (mögliche Lösung auf github, funktioniert aber nicht richtig, warte im Moment auf eine antwort)
-Post-Launch TODO:  
+Post-Launch TODO:
+- XML Sitemap -> Google Webmaster Tools
 - PHPMailer -> multi-part mail with html/plain
 - Favicon
 - formular nach absenden mit animation verstecken

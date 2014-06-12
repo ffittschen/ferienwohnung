@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="utf-8">
@@ -22,7 +22,7 @@
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- AngularJS -->
-    <script src="http://code.angularjs.org/1.2.6/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script>
 
     <script>
     var formApp = angular.module('formApp', []);
@@ -339,7 +339,7 @@
       <footer>
         <div class="container center-block nopadding_lr">
         <p class="pull-right"><a href="#">Zum Seitenanfang</a></p>
-        <p>&copy; 2014 Ferienwohnung Wimberger <span class="padding_l"><a href="../impressum/">Impressum</a> — <a href="../price/index.html#agb">AGB</a> — <a href="../../sitemap.html">Sitemap</a></span></p>
+        <p>&copy; 2014 Ferienwohnung Wimberger <span class="padding_l"><a href="../impressum/">Impressum</a> — <a href="../price/index.html#agb">AGB</a> — <a href="../../sitemap/">Sitemap</a></span></p>
         </div>
       </footer>
     </div>
@@ -374,7 +374,7 @@
             timePicker: false,
             timePickerIncrement: 1,
             timePicker12Hour: true,
-            opens: 'right',
+            opens: 'left',
             buttonClasses: ['btn btn-default'],
             applyClass: 'btn-small btn-primary',
             cancelClass: 'btn-small',
@@ -416,6 +416,8 @@
 
         $('#birthday').daterangepicker(optionSet2, bd);
 
+        
+
         $('#reservation').on('apply.daterangepicker', function(ev, picker) {
             var scope = angular.element($("body")).scope();
             scope.$apply(function() {
@@ -431,6 +433,24 @@
         });
 
     });
+    </script>
+
+    <script type="text/javascript">
+      var navbarHeight = $('.navbar').height(); 
+
+      $(window).scroll(function() {
+        var navbarHeight = $('.navbar').height();      
+        var ySmall = $(window).scrollTop(); 
+        var shadowOpacity = (ySmall / navbarHeight) * 0.4;
+
+        if ( ySmall > 1 && ySmall <= 38) {
+          $('.navbar').css({"box-shadow": "0 2px 3px rgba(0,0,0," + shadowOpacity + ")"});
+        } else if (ySmall > 1 && ySmall > 38 ) {
+          $('.navbar').css({"box-shadow": "0 2px 3px rgba(0,0,0,0.3)"});
+        } else {
+          $('.navbar').css({"box-shadow": "none"});
+        }
+      });
     </script>
 
     <!-- Google Analytics -->

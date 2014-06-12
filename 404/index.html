@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="utf-8">
@@ -12,10 +12,10 @@
     <title>404 - Seite nicht gefunden - Ferienwohnung Wimberger - Farchant</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="//www.ferienwohnung-wimberger.de/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../css/base.css" rel="stylesheet">
+    <link href="//www.ferienwohnung-wimberger.de/css/base.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -226,6 +226,24 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/docs.min.js"></script>
+
+    <script type="text/javascript">
+      var navbarHeight = $('.navbar').height(); 
+
+      $(window).scroll(function() {
+        var navbarHeight = $('.navbar').height();      
+        var ySmall = $(window).scrollTop(); 
+        var shadowOpacity = (ySmall / navbarHeight) * 0.4;
+
+        if ( ySmall > 1 && ySmall <= 38) {
+          $('.navbar').css({"box-shadow": "0 2px 3px rgba(0,0,0," + shadowOpacity + ")"});
+        } else if (ySmall > 1 && ySmall > 38 ) {
+          $('.navbar').css({"box-shadow": "0 2px 3px rgba(0,0,0,0.3)"});
+        } else {
+          $('.navbar').css({"box-shadow": "none"});
+        }
+      });
+    </script>
 
     <!-- Google Analytics -->
     <script>

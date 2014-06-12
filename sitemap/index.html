@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ferienwohnung Wimberger - Farchant">
+    <meta name="author" content="Christoph Wimberger">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+
+    <title>Ferienwohnung Wimberger - Farchant</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/base.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<div class="navbar-wrapper">
+    <div class="container">
+
+        <div class="navbar navbar-custom navbar-fixed-top center-block" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="../" class="navbar-brand">
+                        <strong>Ferienwohnung Wimberger</strong>
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="../de/about/">Über uns</a>
+                        </li>
+                        <li><a href="../de/appartment">Ferienwohnung</a>
+                        </li>
+                        <li><a href="../de/price/">Preise</a>
+                        </li>
+                        <li><a href="../de/contact/">Kontakt</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="../de/impressions/" class="dropdown-toggle" data-toggle="dropdown">Impressionen <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../de/impressions/">Sommer</a>
+                                </li>
+                                <li><a href="../de/impressions/index.html#winter">Winter</a>
+                                </li>
+                                <li><a href="../de/impressions/index.html#links">Links</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="../de/reservations/">Anfrage</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="container marketing ts-container bottom-space">
+  <div class="container" lang="de">
+  <h1>Sitemap</h1>
+  <ul class="sitemap list-unstyled">
+    <li>
+      <a href="../">Ferienwohnung Wimberger - Farchant</a>
+      <ul class="list-unstyled">
+        <li>
+          <a href="../de/about/">Über Uns</a>
+        </li>
+        <li>
+          <a href="../de/appartment/">Rundgang durch die Ferienwohnung</a>
+        </li>
+        <li>
+          <a href="../de/price/">Preise und AGB</a>
+          <ul class="list-unstyled">
+            <li>
+              <a href="../de/price/index.html#agb">Allgemeine Geschäftsbedingungen</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="../de/contact/">Kontakt und Anfahrt - So erreichen Sie uns</a>
+        </li>
+        <li>
+          <a href="../de/impressions/">Impressionen aus verschiedenen Jahreszeiten</a>
+          <ul class="list-unstyled">
+            <li>
+              <a href="../de/impressions/index.html">Impressionen aus dem Sommer</a>
+            </li>
+            <li>
+              <a href="../de/impressions/index.html#winter">Impressionen aus dem Winter</a>
+            </li>
+            <li>
+              <a href="../de/impressions/index.html#links">Links, Empfehlungen und Unternehmensmöglichkeiten</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="../de/reservations/">Anfragen und Reservierungen</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- /.container -->
+
+<!-- FOOTER -->
+<div class="footer-wrapper">
+    <footer>
+        <div class="footer-container center-block">
+            <p class="pull-right"><a href="#">Zum Seitenanfang</a>
+            </p>
+            <p>&copy; 2014 Ferienwohnung Wimberger
+                <span class="padding_l"><a href="../impressum/">Impressum</a> — <a href="../price/index.html#agb">AGB</a> — <a href="../sitemap/">Sitemap</a>
+                </span>
+            </p>
+        </div>
+    </footer>
+</div>
+
+
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+  var navbarHeight = $('.navbar').height(); 
+
+  $(window).scroll(function() {
+    var navbarHeight = $('.navbar').height();      
+    var ySmall = $(window).scrollTop(); 
+    var shadowOpacity = (ySmall / navbarHeight) * 0.4;
+
+    if ( ySmall > 1 && ySmall <= 38) {
+      $('.navbar').css({"box-shadow": "0 2px 3px rgba(0,0,0," + shadowOpacity + ")"});
+    } else if (ySmall > 1 && ySmall > 38 ) {
+      $('.navbar').css({"box-shadow": "0 2px 3px rgba(0,0,0,0.3)"});
+    } else {
+      $('.navbar').css({"box-shadow": "none"});
+    }
+  });
+</script>
+
+<!-- Google Analytics -->
+<script>
+(function(i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+    m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+ga('create', 'UA-51392166-1', 'ferienwohnung-wimberger.de');
+ga('send', 'pageview');
+</script>
+
+</body>
+
+</html>

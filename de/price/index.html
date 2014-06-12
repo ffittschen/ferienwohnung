@@ -81,7 +81,7 @@
         <div class="row featuerette">
             <div class="col-lg-12">
                 <h1>Preise</h1>
-                <div class="table bottom-space">
+                <div id="prices-lg" class="table bottom-space">
                     <table class="table table-bordered">
                         <thead>
                             <tr>
@@ -111,6 +111,36 @@
                         </tbody>
                     </table>
                 </div>
+                <div id="prices-sm" class="table bottom-space">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Ganzjährig (pro Nacht)</th>
+                                <th class="text-center">2 Pers.</th>
+                                <th class="text-center">3 Pers.</th>
+                                <th class="text-center">4 Pers.</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="text-center">
+                                <td>
+                                    <strong>Er&#173;wachs&#173;ene</strong>
+                                </td>
+                                <td>45 €</td>
+                                <td>52 €</td>
+                                <td>59 €</td>
+                            </tr>
+                            <tr class="text-center">
+                                <td>
+                                    <strong>Kin&#173;der 6-16j</strong>
+                                </td>
+                                <td>-</td>
+                                <td>50 €</td>
+                                <td>55 €</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 <p class="lead">Preise sind das ganze Jahr gültig und beinhalten folgende Leistungen:</p>
                 <ul>
                     <li>Bett- und Tischwäsche. Bade-, Hand- und Geschirrtücher. Strom, Wasser, Heizung und Fernseher.</li>
@@ -125,10 +155,10 @@
 
         <hr class="featurette-divider">
 
-        <div class="row featuerette">
+        <div class="row featuerette bottom-space">
             <div class="col-lg-12">
 
-                <h2 id="agb">Allgemeine Geschäftsbedingungen</h2>
+                <h2 id="agb">Allgemeine Geschäfts&#173;bedingungen</h2>
                 <h3>1. Preise</h3>
                 <p>Preise siehe Preistabelle.</p>
                 <h3>2. Abschluss des Mietvertrages</h3>
@@ -211,6 +241,32 @@
             $('.navbar').css({
                 "box-shadow": "none"
             });
+        }
+    });
+    </script>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+      var viewport = $(window).width();
+
+        if (viewport < 416) {
+            $('#prices-lg').hide();
+            $('#prices-sm').show();
+        } else {
+            $('#prices-lg').show();
+            $('#prices-sm').hide();
+        }
+    });
+
+    $(window).resize(function() {
+      var viewport = $(window).width();
+
+        if (viewport < 416) {
+            $('#prices-lg').hide();
+            $('#prices-sm').show();
+        } else {
+            $('#prices-lg').show();
+            $('#prices-sm').hide();
         }
     });
     </script>

@@ -8,7 +8,7 @@ Pre-Launch TODO:
         - nofollow bei links nach außen
 
 - Mobile
-    - datepicker css kalender auf mobile falschrum (mögliche Lösung auf github, funktioniert aber nicht richtig, warte im Moment auf eine antwort)
+
 Post-Launch TODO:
 - XML Sitemap -> Google Webmaster Tools
 - PHPMailer -> multi-part mail with html/plain
@@ -17,3 +17,4 @@ Post-Launch TODO:
 - angularjs not updating with browser auto completition
 - mobile Ansicht carousel: media queries höhe einstellen
 - navi in mobiler ansicht wie bei instagram app?
+- og:fbadmin tag

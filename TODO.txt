@@ -2,10 +2,6 @@ Pre-Launch TODO:
 - General
     - Sitemap Bild auf rechte Seite?
     - SEO Sachen für Google
-        - meta tags in den <head>
-        - allen <a> tags einen title geben
-        - allen <img> tags einen title geben und alt prüfen
-        - nofollow bei links nach außen
 
 - Mobile
 
@@ -18,3 +14,4 @@ Post-Launch TODO:
 - mobile Ansicht carousel: media queries höhe einstellen
 - navi in mobiler ansicht wie bei instagram app?
 - og:fbadmin tag
+- Sitemap Bild auf rechte Seite?

@@ -273,6 +273,9 @@ h2#links {
       float: left!important;
       text-align: center;
     }
+    .navbar-brand {
+    padding: 14px 5px;
+  }
 }
 
 @media (max-width: 767px) {

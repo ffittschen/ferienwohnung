@@ -76,6 +76,19 @@ a:hover, a:focus {
     border-bottom: 0;
 }
 
+.navbar-custom .navbar-nav > .open > a, .navbar-custom .navbar-nav > .open > a:hover, .navbar-custom .navbar-nav > .open > a:focus {
+  transition: none; /* explorer 10 */
+  -webkit-transition: none; /* chrome & safari */
+  -moz-transition: none; /* firefox */
+  -o-transition: none; /* opera */
+  background-color: #F1F1F3;
+  color: #CD9648;
+}
+
+.dropdown-menu {
+  min-width: 140px;
+}
+
 /* CUSTOMIZE THE Footer
 -------------------------------------------------- */
 
@@ -281,6 +294,9 @@ h2#links {
 @media (max-width: 991px) {
     .navbar-wrapper .container {
       width: 100%;
+    }
+    .dropdown-menu {
+      min-width: 120px;
     }
 }
 

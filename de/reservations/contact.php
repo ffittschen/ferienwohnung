@@ -44,7 +44,7 @@ $data           = array();      // array to pass back data
     else
         $data['adults'] = $_POST['adults']; // (r)
 
-    if (empty($_POST['children']))
+    if (!isset($_POST['children']))
         $errors['children'] = 'children is required.';
     else
         $data['children'] = $_POST['children']; // (r)

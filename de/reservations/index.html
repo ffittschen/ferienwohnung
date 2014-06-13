@@ -26,13 +26,13 @@
     <title>Anfragen und Reservierungen - Ferienwohnung Wimberger - Garmisch-Partenkirchen</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="//www.ferienwohnung-wimberger.de/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../../css/base.css" rel="stylesheet">
+    <link href="//www.ferienwohnung-wimberger.de/css/base.css" rel="stylesheet">
 
     <!-- Styles for the daterange picker -->
-    <link rel="stylesheet" type="text/css" media="all" href="../../css/daterangepicker-bs3.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="//www.ferienwohnung-wimberger.de/css/daterangepicker-bs3.css" />
 
     <!-- AngularJS -->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script>
@@ -96,6 +96,7 @@
 
         $scope.adultsChanged = function() {
             $scope.user.adults = $scope.selectedAdults.adults;
+            $scope.user.children = null;
         }
 
         $scope.childrenChanged = function() {
@@ -159,26 +160,26 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a href="../../" title="Startseite - Ferienwohnung Wimberger" class="navbar-brand">Ferienwohnung Wimberger</a>
+              <a href="//www.ferienwohnung-wimberger.de/" title="Startseite - Ferienwohnung Wimberger" class="navbar-brand">Ferienwohnung Wimberger</a>
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li><a href="../about/" title="Über uns">Über uns</a></li>
-                <li><a href="../appartment/" title="Rundgang durch die Ferienwohnung">Ferienwohnung</a>
+                <li><a href="//www.ferienwohnung-wimberger.de/de/about/" title="Über uns">Über uns</a></li>
+                <li><a href="//www.ferienwohnung-wimberger.de/de/appartment/" title="Rundgang durch die Ferienwohnung">Ferienwohnung</a>
                 </li>
-                <li><a href="../price/" title="Preise und Allgemeine Geschäftsbedingungen">Preise</a></li>
-                <li><a href="../contact/" title="Kontakt und Anfahrt - So erreichen Sie uns">Kontakt</a></li>
+                <li><a href="//www.ferienwohnung-wimberger.de/de/price/" title="Preise und Allgemeine Geschäftsbedingungen">Preise</a></li>
+                <li><a href="//www.ferienwohnung-wimberger.de/de/contact/" title="Kontakt und Anfahrt - So erreichen Sie uns">Kontakt</a></li>
                 <li class="dropdown">
-                  <a href="../impressions/" class="dropdown-toggle" data-toggle="dropdown">Impressionen <b class="caret"></b></a>
+                  <a href="//www.ferienwohnung-wimberger.de/de/impressions/" class="dropdown-toggle" data-toggle="dropdown">Impressionen <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <li><a href="../impressions/" title="Impressionen aus dem Sommer">Sommer</a></li>
-                    <li><a href="../impressions/index.html#winter" title="Impressionen aus dem Winter">Winter</a></li>
-                    <li><a href="../de/impressions/index.html#links" title="Links, Empfehlungen und Unternehmensmöglichkeiten">Links</a></li>
+                    <li><a href="//www.ferienwohnung-wimberger.de/de/impressions/" title="Impressionen aus dem Sommer">Sommer</a></li>
+                    <li><a href="//www.ferienwohnung-wimberger.de/de/impressions/index.html#winter" title="Impressionen aus dem Winter">Winter</a></li>
+                    <li><a href="//www.ferienwohnung-wimberger.de/de/impressions/index.html#links" title="Links, Empfehlungen und Unternehmensmöglichkeiten">Links</a></li>
                   </ul>
                 </li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="../reservations/" title="Anfragen und Reservierungen">Anfrage</a></li>
+                <li class="active"><a href="//www.ferienwohnung-wimberger.de/de/reservations/" title="Anfragen und Reservierungen">Anfrage</a></li>
               </ul>
             </div>
           </div>
@@ -329,8 +330,9 @@
                     </div>
                     <div class="form-group">
                         <div class="col-sm-offset-3 col-sm-7">
-                            <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid || !userForm.adults.$dirty || !userForm.children.$dirty">Abschicken</button>
-                            <span class="help-block" ng-show="userForm.$invalid || !userForm.adults.$dirty || !userForm.children.$dirty">Felder markiert mit (*) sind Pflichtfelder.</span>
+                            <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid || !userForm.adults.$dirty || !userForm.children.$dirty || user.adults == 0 || user.children == null">Abschicken</button>
+                            <span class="help-block" ng-show="userForm.$invalid || !userForm.adults.$dirty || !userForm.children.$dirty || user.children == null">Felder markiert mit (*) sind Pflichtfelder.</span>
+                            <span class="help-block text-danger" ng-show="user.adults == 0">Es muss mindestens 1 Erwachsener ausgewählt sein!</span>
                         </div>
 
 
@@ -338,12 +340,24 @@
                 </form>
                 <!-- <h2>Debug info:</h2>
                 <pre>
-                  {{ phpErrors }}
-                  {{ user }}
                   selectedAdults: {{ selectedAdults }}
+                  user.adults: {{ user.adults }}
+                  user.adults.$valid: {{ user.adults.$valid }}
+                  user.adults.$dirty: {{ user.adults.$dirty }}
+                  userForm.adults: {{ userForm.adults }}
+                  userForm.adults.$valid: {{ userForm.adults.$valid }}
+                  userForm.adults.$dirty: {{ userForm.adults.$dirty }}
                   selectedChildren: {{ selectedChildren }}
-                  {{ userForm }} 
-                </pre>-->
+                  user.children: {{ user.children }}
+                  user.children.$valid: {{ user.children.$valid }}
+                  user.children.$dirty: {{ user.children.$dirty }}
+                  userForm.children: {{ userForm.children }}
+                  userForm.children.$valid: {{ userForm.children.$valid }}
+                  userForm.children.$dirty: {{ userForm.children.$dirty }}
+                  user: {{ user }}
+                  userForm: {{ userForm }} 
+                  phpErrors: {{ phpErrors }} 
+                </pre> -->
             </div>
         </div>
         </div> <!-- /.container-->
@@ -358,7 +372,7 @@
                   &copy; 2014 Ferienwohnung Wimberger
                 </div>
                 <div class="pull-left">
-                  <a href="../impressum/" title="Impressum">>Impressum</a> — <a href="../price/index.html#agb" title="Allgemeine Geschäftsbedingungen">AGB</a> — <a href="../../sitemap/" title="Sitemap">Sitemap</a>
+                  <a href="//www.ferienwohnung-wimberger.de/de/impressum/" title="Impressum">Impressum</a> — <a href="//www.ferienwohnung-wimberger.de/de/price/index.html#agb" title="Allgemeine Geschäftsbedingungen">AGB</a> — <a href="//www.ferienwohnung-wimberger.de/sitemap/" title="Sitemap">Sitemap</a>
                 </div>
               </div>
             </div>
@@ -369,10 +383,10 @@
         ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="../../js/bootstrap.min.js"></script>
+    <script src="//www.ferienwohnung-wimberger.de/js/bootstrap.min.js"></script>
     <!-- JS for daterange picker -->
-    <script type="text/javascript" src="../../js/moment.min.js"></script>
-    <script type="text/javascript" src="../../js/daterangepicker.js"></script>
+    <script type="text/javascript" src="//www.ferienwohnung-wimberger.de/js/moment.min.js"></script>
+    <script type="text/javascript" src="//www.ferienwohnung-wimberger.de/js/daterangepicker.js"></script>
 
     <script type="text/javascript">
     $(document).ready(function() {

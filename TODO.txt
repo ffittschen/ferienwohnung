@@ -1,19 +1,17 @@
-Pre-Launch TODO:
+TODO:
 - General
-    - Sitemap Bild auf rechte Seite?
-    - SEO Sachen für Google
+    - 0 Erwachsene entfernen ?!
+    - Startseite auch noch 3 nebeneinander unter 1200px breite
+    - Favicon
+    - formular nach absenden mit animation verstecken
+    - og:fbadmin tag
+    - nach versendeter Anfrage: Link zurück zur Startseite
 
-- Mobile
+- Mobile:
+    - angularjs not updating with browser auto completition
 
-Post-Launch TODO:
-- Startseite auch noch 3 nebeneinander unter 1200px breite
-- XML Sitemap -> Google Webmaster Tools
+
+Low Prio:
 - PHPMailer -> multi-part mail with html/plain
-- Favicon
-- formular nach absenden mit animation verstecken
-- angularjs not updating with browser auto completition
-- mobile Ansicht carousel: media queries höhe einstellen
 - navi in mobiler ansicht wie bei instagram app?
-- og:fbadmin tag
 - Sitemap Bild auf rechte Seite?
-- nach versendeter Anfrage: Link zurück zur Startseite

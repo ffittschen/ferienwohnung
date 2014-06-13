@@ -301,6 +301,20 @@ h2#links {
     .dropdown-menu {
       min-width: 120px;
     }
+    .home .col-lg-4 {
+    width: 100%;
+    float: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .home .container {
+      width: 100%;
+  }
+  .home .col-lg-4 {
+    width: 33.3333%;
+    float: left;
+  }
 }
 
 @media (min-width: 768px) {

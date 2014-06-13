@@ -6,6 +6,7 @@ Pre-Launch TODO:
 - Mobile
 
 Post-Launch TODO:
+- Startseite auch noch 3 nebeneinander unter 1200px breite
 - XML Sitemap -> Google Webmaster Tools
 - PHPMailer -> multi-part mail with html/plain
 - Favicon

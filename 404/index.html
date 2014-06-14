@@ -83,7 +83,7 @@
 
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="errorpage-heading text-center">404</h1>
+                <h1 class="errorpage-heading text-center ts-container">404</h1>
                 <p class="errorpage-paragraph text-center"><strong>Die aufgerufene Seite wurde nicht gefunden.</strong></p>
 
                 <script type="text/javaScript">
@@ -171,7 +171,7 @@
                         strSite = strReferrer;
                         strSite = strSite.split("/");
                         strSite = strSite[2];
-                        document.write("<p>Sie wurden von: <strong><a href='" + strReferrer + "' target='_blank'>" + strSite + "</a></strong> fälschlicherweise hierher weitergeleitet.</p>");
+                        document.write("<p class='text-center'>Sie wurden von: <strong><a href='" + strReferrer + "' target='_blank'>" + strSite + "</a></strong> fälschlicherweise hierher weitergeleitet.</p>");
 
                         // for referrals from other sites with broken links
                         // -----------------------------------------------
@@ -179,22 +179,22 @@
                         //got here
 
 
-                        /*str='<div class="form-group">';
-                str+='<h2>Helfen Sie uns, damit wir Ihnen helfen können!</h2>';
+                        str='<div class="container">';
+                str+='<h2>Vielen Dank für Ihre Unterstützung!</h2>';
                 if (blnInsiteReferral)
-                  {str+='<p>Es scheint, als wenn einer von unseren Links nicht mehr aktuell ist - dies tut uns Leid und wir versichern Ihnen, dass diese Umstände an den Verantwortlichen weitergeleitet werden, damit der Link repariert wird. Alles, was Sie dazu beitragen müssen, ist den Knopf zu drücken!</p>';}
+                  {str+='<p>Es scheint, als wenn einer von unseren Links nicht mehr aktuell ist - dies tut uns Leid und wir versichern Ihnen, dass diese Umstände an den Verantwortlichen weitergeleitet wurden, damit der Link repariert wird.</p>';}
                 else
-                  {str+='<p>Um unsere Seite zu verbessern können Sie uns informieren, falls eine andere Seite über einen falschen Link verfügt. Wir werden dann unser bestes tun und den Verantwortlichen informieren, dass unsere Seite sich verändert hat und der Link bitte aktualisiert werden soll. <strong>Drücken Sie dazu einfach den Knopf!</strong></p>';}
-                str+='<form method="post" action="http:\/\/www.cutandpastescripts.com\/cgi-bin\/formprocessing\/forms.pl" onsubmit="alert(\'Vielen Dank für Ihre Hilfe!\');">';
+                  {str+='<p>Es scheint, als wenn ein Link, der auf unsere Seite führt nicht mehr aktuell ist. Wir werden unser Bestes tun und den Verantwortlichen informieren, damit der Link, welcher hier hergeführt hat, aktualisiert wird.</p>';}
+                /*str+='<form method="post" action="http:\/\/www.cutandpastescripts.com\/cgi-bin\/formprocessing\/forms.pl" onsubmit="alert(\'Vielen Dank für Ihre Hilfe!\');">';
                 str+='<input type="hidden" name="activenumber" value="" \/>';
                 str+='<input type="hidden" name="username" value="" \/>';
                 str+='<input type="hidden" name="Referring Site" value="' + strReferrer + '" \/>';
                 str+='<input type="hidden" name="Page Requested" value="' + location.href + '" \/>';
                 str+='<input type="submit" name="cmdSubmit" class="btn btn-primary" value="Link melden &gt;&gt;" \/>';
-                str+='<\/form>';
+                str+='<\/form>';*/
                 str+='<\/div>';
                 
-                document.write(str);*/
+                document.write(str);
                     }
                 }
                 </script>

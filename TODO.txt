@@ -1,7 +1,7 @@
 TODO:
 - General
     - 0 Erwachsene entfernen ?!
-    - Startseite auch noch 3 nebeneinander unter 1200px breite
+    - Anmelden bei Yelp, Tripadvisor, Bing Places und ein "normales" Google+ Profil erstellen
     - Favicon
     - formular nach absenden mit animation verstecken
     - og:fbadmin tag
